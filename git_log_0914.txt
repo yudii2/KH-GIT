@@ -68,6 +68,58 @@ Date:   Tue Sep 14 16:17:28 2021 +0900
 
     [ADD] git 설정 및 첫 commit
 
-
+-----------------------------------------------------------------------------
 올바르게 추가된 테스트용 코드
+
+
+--------------------------------------------------------------------------------
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_prac (main)
+$ git log
+commit e2030296000d22c93a084ca07b3a2039cd14e58d (HEAD -> main)
+Author: yudii2 <qleen513@gmail.com>
+Date:   Tue Sep 14 17:04:53 2021 +0900
+
+    [UPDATE] git life cycle 공부
+
+commit 7ec1cbbac8c48cba7e774512234c439eed39b75c
+Author: yudii2 <qleen513@gmail.com>
+Date:   Tue Sep 14 16:43:26 2021 +0900
+
+    [ADD] git add, commit 공부
+
+commit 6f00c2291d6151f53e71bfc870d3520b831ca191
+Author: yudii2 <qleen513@gmail.com>
+Date:   Tue Sep 14 16:17:28 2021 +0900
+
+    [ADD] git 설정 및 첫 commit
+
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_prac (main)
+$ git reset --hard 7ec1cbbac8c48cba7e774512234c439eed39b75c		//reset
+HEAD is now at 7ec1cbb [ADD] git add, commit 공부
+
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_prac (main)
+$ git log
+commit 7ec1cbbac8c48cba7e774512234c439eed39b75c (HEAD -> main)
+Author: yudii2 <qleen513@gmail.com>
+Date:   Tue Sep 14 16:43:26 2021 +0900
+
+    [ADD] git add, commit 공부
+
+commit 6f00c2291d6151f53e71bfc870d3520b831ca191
+Author: yudii2 <qleen513@gmail.com>
+Date:   Tue Sep 14 16:17:28 2021 +0900
+
+    [ADD] git 설정 및 첫 commit
+
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_prac (main)
+$ git reflog							//상세log
+7ec1cbb (HEAD -> main) HEAD@{0}: reset: moving to 7ec1cbbac8c48cba7e774512234c43
+9eed39b75c
+e203029 HEAD@{1}: commit: [UPDATE] git life cycle 공부
+7ec1cbb (HEAD -> main) HEAD@{2}: commit: [ADD] git add, commit 공부
+6f00c22 HEAD@{3}: commit (initial): [ADD] git 설정 및 첫 commit
+
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_prac (main)
+$ git reset --hard e203029						//재reset
+HEAD is now at e203029 [UPDATE] git life cycle 공부
 
