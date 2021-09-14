@@ -224,3 +224,37 @@ Merge made by the 'recursive' strategy.
 qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_userA (main)
 $ git checkout -b dev			//불안정 or 임시 기능개발은 dev브랜치에서 개발!
 Switched to a new branch 'dev'
+
+//dev브랜치에서 개발중~ing
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_userA (dev)
+$ git add .
+
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_userA (dev)
+$ git commit -m '[dev_userA] 새로운기능개발 시작'
+[dev c497883] [dev_userA] 새로운기능개발 시작
+ 1 file changed, 1 insertion(+)
+ create mode 100644 userA_dev.txt
+
+//기능개발 성공
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_userA (dev)
+$ git commit -am '[dev_userA] 네이버 로그인 개발완료'
+[dev e89f886] [dev_userA] 네이버 로그인 개발완료
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_userA (dev)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_userA (main)
+$ git merge dev
+Merge made by the 'recursive' strategy.
+ userA_dev.txt | 3 +++
+ 1 file changed, 3 insertions(+)
+ create mode 100644 userA_dev.txt
+
+
+
