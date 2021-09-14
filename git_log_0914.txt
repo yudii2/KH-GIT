@@ -1,3 +1,4 @@
+충돌난다 분명히
 
 qleen@LAPTOP-1UQEUT7N MINGW64 ~ (yujin)
 $ git config --global user.name
