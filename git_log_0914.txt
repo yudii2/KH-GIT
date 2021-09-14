@@ -190,4 +190,31 @@ Merge made by the 'recursive' strategy.
  1 file changed, 23 insertions(+)
  create mode 100644 .gitignore
 
+---------------------------------------------------------------------------------------------------------------------
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_userA (main)
+$ git push -u origin main			//-u옵션을 처음에 입력하면 이후 명령어는 git push만 작성해도된다.
+
+------------------------------------------------푸시 오류--------------------------------
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_userB (main)
+$ git push -u origin main				//푸시하려는데 오류날 경우 pull을 먼저 안했기 때문에 원격 repository와 차이가 발생했기 때문
+To https://github.com/yudii2/KH-GIT.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/yudii2/KH-GIT.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_userB (main)
+$ git pull origin main				//pull origin <branch명>
+From https://github.com/yudii2/KH-GIT
+ * branch            main       -> FETCH_HEAD
+Merge made by the 'recursive' strategy.
+ git_log_0914.txt                                   | 30 ++++++++++++++++++++++
+ ...70\260\353\212\245\352\265\254\355\230\204.txt" |  1 +
+ 2 files changed, 31 insertions(+)
+ create mode 100644 "\355\232\214\354\233\220\352\264\200\353\246\254\352\270\26
+0\353\212\245\352\265\254\355\230\204.txt"
+
 
