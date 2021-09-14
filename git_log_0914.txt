@@ -1,0 +1,71 @@
+
+qleen@LAPTOP-1UQEUT7N MINGW64 ~ (yujin)
+$ git config --global user.name
+yudii2
+
+qleen@LAPTOP-1UQEUT7N MINGW64 ~ (yujin)
+$ git config --global user.email
+qleen513@gmail.com
+
+qleen@LAPTOP-1UQEUT7N MINGW64 ~ (yujin)
+$ cd /c/CODE/git_prac/
+
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_prac
+$ git init
+Initialized empty Git repository in C:/CODE/git_prac/.git/
+
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_prac (master)
+$ git checkout -b main
+Switched to a new branch 'main'
+
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_prac (main)
+$ git branch -M main	//main브랜치를 기본 브랜치로 설정
+
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_prac (main)
+$ git stauts
+git: 'stauts' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_prac (main)
+$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        git_study.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_prac (main)
+$ git add git_study.txt
+
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_prac (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   git_study.txt
+
+
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_prac (main)
+$ git commit -m "[ADD] git 설정 및 첫 commit"
+[main (root-commit) 6f00c22] [ADD] git 설정 및 첫 commit
+ 1 file changed, 14 insertions(+)
+ create mode 100644 git_study.txt
+
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_prac (main)
+$ git log
+commit 6f00c2291d6151f53e71bfc870d3520b831ca191 (HEAD -> main)
+Author: yudii2 <qleen513@gmail.com>
+Date:   Tue Sep 14 16:17:28 2021 +0900
+
+    [ADD] git 설정 및 첫 commit
+
+

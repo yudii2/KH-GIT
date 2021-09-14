@@ -12,3 +12,8 @@ GIT 사용
 	git checkout -b main : main 브랜치를 생성하고 해당 브랜치로 이동
 	git branch -M main : 기본 브랜치를 main브랜치로 지정
 	git stauts : 상태확인 
+
+4. 파일을 생성하고 add, commit 하기
+	git add <파일명> : staging area에 추가
+	git commit :  commit에 대한 메시지를 남기기 위해 vi에디터가 실행된다.
+		[vi에디터 명령어] i : 입력모드, esc : 입력모드에서 나오기, wq: 저장 및 종료
