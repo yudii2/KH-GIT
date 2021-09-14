@@ -161,3 +161,33 @@ qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_prac (main)
 $ git commit -m '[reset] reset option공부'
 [main 250c90d] [reset] reset option공부
  2 files changed, 63 insertions(+), 2 deletions(-)
+
+---------------------------------------remote repository연결-------------------------------------
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_userA (main)
+$ git remote add origin https://github.com/yudii2/KH-GIT.git
+
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_userA (main)
+$ git remote
+origin
+
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_userA (main)
+$ git remote -v
+origin  https://github.com/yudii2/KH-GIT.git (fetch)
+origin  https://github.com/yudii2/KH-GIT.git (push)
+
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_userA (main)
+$ git pull --allow-unrelated-histories origin main		//remote repository처음 생성후 한번만 해당 코드로 pull옵션을 걸어주면 됨
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 780 bytes | 65.00 KiB/s, done.
+From https://github.com/yudii2/KH-GIT
+ * branch            main       -> FETCH_HEAD
+ * [new branch]      main       -> origin/main
+Merge made by the 'recursive' strategy.
+ .gitignore | 23 +++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
+ create mode 100644 .gitignore
+
+
