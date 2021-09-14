@@ -219,3 +219,8 @@ Merge made by the 'recursive' strategy.
 0\353\212\245\352\265\254\355\230\204.txt"
 
 
+-----------------------------------------userA에서 새로운 개발기능브랜치 생성---------------------------
+
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_userA (main)
+$ git checkout -b dev			//불안정 or 임시 기능개발은 dev브랜치에서 개발!
+Switched to a new branch 'dev'
