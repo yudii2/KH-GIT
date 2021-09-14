@@ -221,3 +221,82 @@ Merge made by the 'recursive' strategy.
 0\353\212\245\352\265\254\355\230\204.txt"
 
 
+-----------------------------------------userA에서 새로운 개발기능브랜치 생성---------------------------
+
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_userA (main)
+$ git checkout -b dev			//불안정 or 임시 기능개발은 dev브랜치에서 개발!
+Switched to a new branch 'dev'
+
+//dev브랜치에서 개발중~ing
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_userA (dev)
+$ git add .
+
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_userA (dev)
+$ git commit -m '[dev_userA] 새로운기능개발 시작'
+[dev c497883] [dev_userA] 새로운기능개발 시작
+ 1 file changed, 1 insertion(+)
+ create mode 100644 userA_dev.txt
+
+//기능개발 성공
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_userA (dev)
+$ git commit -am '[dev_userA] 네이버 로그인 개발완료'
+[dev e89f886] [dev_userA] 네이버 로그인 개발완료
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_userA (dev)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_userA (main)
+$ git merge dev
+Merge made by the 'recursive' strategy.
+ userA_dev.txt | 3 +++
+ 1 file changed, 3 insertions(+)
+ create mode 100644 userA_dev.txt
+
+-------------------------------------------------------------------------------------
+개발브랜치에서 개발 완료 후 main 브랜치에서 dev브랜치를 머지할 때
+개발브랜치에서 수많은 commit log들을 포함해 머지하는 단점!
+이를 해결하기 위해, git merge --squash dev라는 옵션을 사용한다.
+그러면, 머지한 시점에 staging area에 해당 파일이 올라가게 되고
+main브랜치에서 새롭게 commit log를 생성할 수 있는 기회를 주게 된다.
+
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_userA (dev)
+$ git log --oneline
+1b2cc08 (HEAD -> dev) [dev_userA] 카카오 개발 완료
+db41c24 [dev_userA] 카카오 API
+422d1ba [dev_userA] 카카오로그인 개발시작
+e89f886 [dev_userA] 네이버 로그인 개발완료
+c497883 [dev_userA] 새로운기능개발 시작
+
+
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_userA (main)
+$ git merge --squash dev
+Automatic merge went well; stopped before committing as requested
+Squash commit -- not updating HEAD
+
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_userA (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   userA_dev.txt
+
+
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_userA (main)
+$ git commit -m '[userA] 카카오로그인 개발완료'
+[main faaefe4] [userA] 카카오로그인 개발완료
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+qleen@LAPTOP-1UQEUT7N MINGW64 /c/CODE/git_userA (main)
+$ git log --oneline
+faaefe4 (HEAD -> main) [userA] 카카오로그인 개발완료		//한줄로 뜨는것을 확인 할 수 있다.
+1f3304f (origin/main) [UPDATE] dev 브랜치 설명 추가
+d3d14d4 Merge branch 'dev'
+e89f886 [dev_userA] 네이버 로그인 개발완료
